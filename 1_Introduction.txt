@@ -1,0 +1,15 @@
+Topic:
+Physical data structure they define how the data is arranged in the memory. 
+Arrays
+Matrices
+Linked list
+
+Logical data structures. This defines how the data can be utilized, how the arrangement is and how it should be utilized. 
+Stack
+Queues
+Trees
+Graph
+Hashing
+
+Recursion
+Sorting
