@@ -33,7 +33,7 @@
  *      cout << "Sum: " << z << endl;
  * }
  * 
- * <>
+ * <Functions.png>
  * 
  * The function will have its own activation record, its separate set of variables will be there inside the memory, and when it is called they are created, and when their function terminates they are destroyed. 
  * This function cannot access the variables of main and main cannot access the variables of this add function. One function cannot access the variables of another function. 
