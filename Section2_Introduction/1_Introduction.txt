@@ -1,0 +1,23 @@
+Data structure can be defined as arrangement of collection of data items so that they can be utilized efficiently, operations on that data can be done efficiently. 
+It's all about the arrangement of data and the operations on the data that are efficent operations on the data. 
+-> Inside the main memory during the execution of a program.
+So without data structure there cannot be any application. Every application will have a set of instructions which will perform operations on data, so data is mandatory
+Data will be kept inside the main memory 
+So during the execution of a program how the program will manage data inside the main memory and perform the operations.
+
+<>
+Here is a CPU, processor that is central processing unit that is our microporcessor. And main memory
+And RAM and storage that is hard disk drive or external storage.
+
+CPU will execute the instructions. And temporary memory that is working memory. It is also called as primary memory and this is permanent storage.
+
+When run a program, this program will be brought into the main memory. These are all the instructions of this MS word program.
+So whenever want to run an application the appication code or the program code has to be brought into the main memory.
+
+How organize the data?
+The arrangement or organizing of the data insde the main memory for efficient utilizaition by the application that arrangement is called as a Data Structure. 
+So the data structures are formed in the main memory, during the execution time of a program. 
+
+How it will arrange the data in the main memory for performing its operations?
+That arrangement is called as data structures. A data structure is a part of running program. 
+Without data structure, we cannot develop any application.
