@@ -1,0 +1,15 @@
+void func(int n)
+{
+    if (n > 0)
+    {
+        1....
+        func(n-1);
+        3.....
+    }
+}
+
+A function recursive function that is calling itself. 
+When 1 execute, this will execute at calling time and when 3 statement will execute at returning time. 
+So we can call 1 portion as ascending and 3 we can call it as descending.
+So recursive functions have two phases that are ascending and descending.   
+Recursion is also just like repeating. But the difference is a loop will have only ascending phase but the recursion will have ascending as well as descending phase. 
