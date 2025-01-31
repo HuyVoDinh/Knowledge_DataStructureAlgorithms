@@ -1,0 +1,40 @@
+void func(int n)
+{
+    if (n>0)
+    {
+        // cout << n << endl;
+        func(n-1);
+    }
+}
+
+void main()
+{
+    int x = 3;
+    func1(x);   
+}
+
+How much time it takes for printing: one unit of time. But this is recursion function.
+So it is calling itself again and again so total how many time it's priting?
+In this exam it take 3 units.  if 5, it'll take 5 units => take n units.
+The time depends on number of books. 
+
+void func(int n)    -> T(n) time
+{
+    if (n>0)        -> 1 time
+    {
+        cout << n << endl; -> 1 time
+        func(n-1);  -> T(n-1)
+    }
+}
+-> T(n) = T(n-1) + 2    (n > 0)
+         = 1             (n = 0)
+
+T(n) = T(n-1) + 1   but T(n-1) = T(n-2) + 1
+-> T(n) = T(n-2) + 2
+.....
+-> T(n) = T(n-k) + k 
+Assume n - k = 0: n = k 
+T(n) = T(n-n) + n 
+T(n) = T(0) + n
+T(n) = 1 + n
+=> O(n)
