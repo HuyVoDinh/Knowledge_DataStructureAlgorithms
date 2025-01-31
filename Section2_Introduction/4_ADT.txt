@@ -1,0 +1,25 @@
+ADT is Abstract DataType.
+
+Data type is defined as representation of data. It is operations on data. 
+
+representation: it is how a datatype is represented inside the memory
+Example int x, there are 2 bytes -> 16 bit. First bit is sign and 15 bit.
+
+We are concerned about declaring a variable and using it by performing operations (+, -, *, /, %, ++, --). We need not know internal details, how these operations are performed.
+These things are hidden from us, we can call them as abstract. Without knowing internal details, We can use it so internal details are abstract for us.
+
+List: 8, 3, 8, 4, 6, 10, 12
+
+Data:
+1, Space for staring element 
+2, Capacity
+3, Size 
+
+We can use Array, Linked list 
+
+Operations that we perform on a list: 
+Add(x)
+Remove(x)
+Search(Key)
+
+When you write any class in C++ which has the data representation and operations together, it defines an ADT
