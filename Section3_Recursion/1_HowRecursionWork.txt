@@ -1,0 +1,43 @@
+void func(int n)
+{
+
+}
+
+int main()
+{
+    int x;
+    func(x);
+}
+
+When starts executing program, it will start executing from main function, first it will execute the first statement than second statement than the thrid statement is function call.
+Once it has finish, the function ends and the control come back to the same line. If any more operations present in this line, they will execute.
+Otherwise it will execute next line
+
+Type func(param)
+{
+    if (base condition)
+    {
+        func(param);
+    }
+}
+Recursion is function is calling itself. So if a function is calling itself, then it is called recursive function.
+Base condition is there so there must be some base condition that will terminate recursion. Otherwise it will go in to infinite calling. 
+Inside recursive function, there must be some condition which will make the recursion stop terminate. 
+
+void func(int n)
+{
+    if (n>0)
+    {
+        // cout << n << endl;
+        func(n-1);
+        //  cout << n << endl;
+    }
+}
+
+void main()
+{
+    int x = 3;
+    func(x); 
+}
+
+func(3) -> func(2) -> func(1) -> func(0) -> go back to the previous function and come out afterwards.
