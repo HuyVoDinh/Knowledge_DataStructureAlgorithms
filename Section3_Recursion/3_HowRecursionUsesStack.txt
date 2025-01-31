@@ -1,0 +1,40 @@
+void func(int n)
+{
+    if (n>0)
+    {
+        // cout << n << endl;
+        func(n-1);
+    }
+}
+
+void main()
+{
+    int x = 3;
+    func1(x);   
+}
+<3_HowRecursionUsesStack1.png>
+The program starts executing from main function. So the first function is main function in that main function, this is the first statement that is x is created.
+So a activation record for main function is created and it will have its own variable that is x having value 3. Then the next statement is func1(), a call to func1().
+It is having just one variable that is n, this is the only variable. So a activation record for that func1() is created and it will have that variable n and this value x is passed to that one. 
+So this is for main and this is for func1(). If n > 0, printed the next call function func1() is called once again with the reduced value of n, that is decremented value n - 1.
+So that function is called again. So once the function is called, we know that activation record will be created and in that again variable n, and that will have the value 2. 
+This is also activation record for func1() and this is the second call.
+2 > 0, printed 2 then next line call again with n-1.
+An activation record is created and variable n, is created with value 1. 
+And this is again, a call for func1().
+Now again if n > 0, 1>0 -> printed 1 then again call func1(), again call fun1() with reduced value, decremented value n-1.
+So again, an activation record for func1() is created and it will have the variable n, and that value is 0.
+This is a call again for func1(). This time as n is 0, it not greated than 0.
+It will not enter inside, it will not print anything and it will come out of this conditional statement. So it doesn't enter into conditional statements. 
+So it doesn't enter into conditional statement. It'll come out of the function. And once that call ends, this activation record is deleted and the control goes back to the previous call. 
+And in that previous call, what it has done, it has called this one. 
+So the next is nothing so that call will be using this activation record. And that also ends so again, this is also deleted, it goes back to the previous call in the previous call.
+This line is over, so there's nothing remaining. And that call uses this activation record, but there is nothing to do. So this also deleted and this is also deleted. 
+Then it come back to main, inside main after func1(), there is nothing remaining. So this also ends. 
+
+What is the size of the stack leaving main function if you count the activation records. 
+So only for that function, 4 activation records are created so size of the stack is four.
+How much memory is consuming. Each activation record is having just one variable. -> 4 times -> n+1
+Number of activation records depends on the number of call. So total calls are n+1
+What is n, it is a variable. How much memory is consuming now. It is integer type taking 2 bytes or 4 bytes depending on the compiler.
+So the total memory consumed by this is O(n)
