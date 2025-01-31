@@ -1,0 +1,88 @@
+<2_StackVsHeapMemory.png>
+This block is a memory. The memory is divided into smaller addressable units that are called as bytes. 
+Every byte is having its address. Address will have just 1 value, not like corrdinate system (x,y) it will have a single value. 
+So addresses are linear. After this byte is 5 then is 6 and 7 and so on.
+It depends on the size of the memory, every byte will have its own address.
+
+If you have larger size of RAM 4GB or 8GB, that entire memory is not used as a single unit, but it is divided into manageable pieces, that are called as segment. And usually the size of a segment will be 64 KB.
+
+
+<2_StackVsHeapMemory2.png>
+This entire main memory is divided into three sections and used by a program. code section, heap, stack.
+The machine code of the program, first it should be brought inside the main memory. So it is brought inside the code section. The area that is occupied by the program, in the main memory. That section is called as code section, that not be fixed. It depends on the size of program. So this is the code section, area where the machine code of the program is loaded.
+Now, once it is loaded, the CPU will start executing the program and this program will utilize the remaining memory as divided into stack and heap. 
+
+<2_StackVsHeapMemory3.png>
+void main ()
+{
+    int a;  - 2 bytes 
+    float b;  4 bytes
+}
+Number of bytes taken by integer depens on the compiler, and the operating system, and the hardware, it depednds on various things. 
+Total 6 bytes of memory is allocated inside the stack.
+This block of memory that belongs to the main functions is called as stack frame of main function, or it is also called as activation record of main function, activation record of main function
+How the memory is allocated inside the stack, it depends whatever the variables you have inside a function.
+
+So the size of the memory required by a function was decided at compile time only. Compiler will beforehand decide that, this function needs so much memory and that memory is obtainend, once the program start executing, it is obtained inside the stack. 
+=> This is static memory allocation. 
+What is static here? How many bytes of memory is required by this function was decided at compile time. THe size of the memory is static.
+When is was decided? Compile time. So when everything is done at compile time or before runtime it is called static
+
+
+void func2(int i)
+{
+    int a;
+}
+
+void func1()
+{
+    int x;
+    func2(x);
+}
+
+void main()
+{
+    int a;
+    float b;
+
+    func1();
+}
+
+<2_StackVsHeapMemory4.png>
+When run program, The machine code of this program will be copied in code section. 
+When program starts executing, it will start from the main function. The moment it enters inside main function, it requires variable. 
+So the memory for a and b will be allocated inside stack.
+Call func1. Inside this, the first thing is, variable is required. Variable declarations is there. So the variable is created inside the stack for this function func1. that is x.
+So this piece of memory belongs to main function and above that this belongs to func1().
+Now which function is executing? Current func1() is executing because we have called from here. 
+So this topmost activation record belongs to which function? Currently executing function func1.
+Then func1 will call func2. That is having 2 variables, 1 is its parameter and the other one it its local variable. 
+SO memory is allocated for those variables, i and a and this if for func2.
+Now, presently func2 is running and the topmost activation record inside this area is func2()
+So currently executing function will access the topmost activation record.
+When func2() has finished, therminated then control goes back to func1(). It will come back, after this point, it will come back to func1(), inside this func1().
+Record of func2 will be deleted. 
+After func1 has finished executing. It will come back to the main function after call func1(). Its activation record is also removed from the main memory.
+Main function is end. It's activation record is also deleted from main memory 
+
+
+How heap memory is utilized by a program.
+If the thing are kept one above another, or just randomly, we use the term heap. So heap is used in 2 case.
+One, if the this are properly organized like a tower-like thing, then also it is a heap, and if it is not organised and also it's looking like a tower, then also we call it as heap. 
+Temp heap can be used for organised things, as well as unorganised things.
+Heap is the term used for unorgainized memory. It's not organized, stack memory is organized
+Second, heap memory should be treated like a resource. If your program wants to use a printer, then it can request for a printer. Use the printer, once it has finished using it, it should release the printer so that the other applications can use it.
+Heap memory should be used like a resource, when required, you take the memory. When you don't require, you release the memory.
+Third, program can't directly access heap memory. It can directly access anything inside code staction, anything inside stack. But it will not access heap memory. 
+How do they access memory? Using pointer 
+
+<2_StackVsHeapMemory5.png>
+void main()
+{
+    int *p;
+    p = new int [5]; // This new statement will allocate memory in heap of size 5. And p pointer will point to the heap. 
+    delete []p;       // This memory in heap will be deleted, and then you can make the pointer as null. The address will be become 0, this is not pointing on this location. Heap memory should be explicitly requested, and explicitly released or disposed.
+    p = nullptr;    // means you don't want this pointer p to point there, you don't need that memory anymore and you don't want the pointer to point there, so you can mamke the pointer null. So nothing will be pointing onto this one. Then what about that memory? It is lost? No, It will not be de-allocated. When you don't need the memory, you should  de-allocaed it, as you have requested for that allocation, same way you should request de-allocation of the memory. You must say delete, as it is an array
+    //If not releasing memory in heap, then the memory will be still belonging to your program, and that memory cannot be used again, so it causes loss of memory and the loss of memory is called as memory leak. ANd if you continue the same thing in the program for many times, then at one stage, the heap memory maybe full. There will be no free space in heap memory. 
+    So whenever you allocate the memory, heap memory and if you don't need it, release the memory.
+}
