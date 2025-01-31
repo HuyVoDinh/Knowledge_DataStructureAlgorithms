@@ -1,0 +1,79 @@
+When do any work, any task, we want to know how much time it takes for that, performing that particular task. So that amount of time required, depending on the work that we have to do.
+So we want to know how much time the machine taskes for doing the same task.  
+Time complexity basically depends on the procedure that you are adopting. 
+
+With an array of some size, and some element are there. How many elements may be there in the list of elements in an array? We don't know how many elements will be there.
+We say n, means some number of elements that number of elements may start from 1, up-tp infinity. So we don't define infinity, so, up-tp maximum number, or whatever that number you can imagine, you take that one. 
+So n means not just 5 or 10, this is the first important thing, mostly students get confused. n means some number of elements. 
+What do you want to do with these element? I want to add all of them.
+So you have to go through all of them, one by one you have to take the element and go on adding it. 
+How much time it takes depends on the number of elements. So what is the time taken? -> n.
+Then next thing, what do you want to do?
+I want to search for a particular number, whether element 12 is there or not, search for it. 
+So utmost how much time is it taking? It depends on the number of elements that you have to compare. So how many element are there? n elements are there. So what time is it taken? -> n. It means in a list, if you hae some n elements and you are going through all of them just once the the time is n. 
+So this n, we represent it as a degree. So we can say Order(n).
+There are other terms like, bigo, omega, theta,.
+If you want to access that all the elements then what is the code that you have:
+for(int i = 0; i < n; i++)
+{
+    ................
+}
+This for loop will taking us through all those element once. What is the time O(n).
+
+For finding the time complexity either you can measure the time based on the work that you are doing, means according to your procedure, if you're clear with your procedure, you can know the time, or else from the code, program code also you can find the time complexity. If there is a for loop, going through 0 to last element, means it's n, it's taking O(n) time, whatever it is there inside will repeat for n times. So we analyse based on the procedure also, based on the code also.
+And the most confusing things is, when the code is given we get confused how to analyze this one. So, actually what the code is doing, you do that work, and based on the work you analyse it, it's very simple. It's very simple. If you don't want to understand what the code is doing, then it's a difficult task. So if a for loop is used means there is a chance that time is O(n).
+
+
+[From code]
+void swap(x,y)
+{
+    int t;
+    t = x;
+    x = y;
+    y = t;
+}
+THis is swap function taking two parameters and interchanging the values of X and Y.
+What are the statements inside this, these are the three statements, how much time each statement takes one unit of time because it is just an assignment, so total time is three.
+So the function of n is 3, so you got the time function as 3. So that 3 is constant.
+Order of 1, why it is constant because the degree of n is 0, 3 means 3*n^0
+f(n) = 3n^0
+O(n^0) = O(1)
+
+int sum(int a[], int n)
+{
+    int s,i;
+    for(i = 0; i < n; i++)
+    {
+        s = s + a[i];
+    }
+    return s;
+}
+s = 0, one unit of time. Then assign, condition, assignment, this i++ increment, jist an operator, but this is a loop, this statement will execute for n times.
+This will execute for one time initially and this increment will happen for n times, condition for n times. But one time the condition will fails. So it will stop. -> condition n+1
+So we can ignore all other and take just n+1, so just for loop, we are looing at this one. Just for loop this n+1.
+If you want to include, then it should be 2(n+1).
+Mostly we focus on conditional statement. Otherwise if you sum up all this this is two times of 2(n+1).
+Then what is there inside this statement, it is simple assignment and arithmetic operation addition.
+How many times as long as loop is running how many times loop will run n times? -> n times.
+Then at last return s, how many times this will execute just one time so total, how much I'll find the sum of all these 2(n).
+So the time function is f(n) = 2n+3
+What is the degree of this polynomial?
+This is O(n)
+
+void Add(int n)
+{
+    int i, j;
+    for(i = 0; i < n; i++)
+    {
+        for(j = 0; j < n; j++)
+        {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+}
+
+The first for lopp take n+1 times, so n+1 the execution will happen. Npt anything inside the loop will execute for n times every statement. and second loop will n time and C[i][j] n times.
+But inside for loop has other for loop. The time for this is n+1. So there is already n, because it is inside this outer loop. Nested loop is there so it should multiplication. -> n*(n+1).
+Then statement is inside for loop also, so this loop will repeated for n, more time. So this is n*n 
+f(n) = 2n^2 + 2n + 1
+O(n^2)
