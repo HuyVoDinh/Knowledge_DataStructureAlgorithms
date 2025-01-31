@@ -1,0 +1,27 @@
+[Physical data structure]
+<3_PhysicalAndLogicalDataStructure1.png>
+These are two physical data structure, Array and Linked List. 
+They are physical because theses data structure decides or defines how the memory is organized, how the memory is allocated.
+THis is an Array, this is directly supported by programming languages. THis is a collection of contiguous memory locations, all these locations are side by side. If I have an array for seven integers, then all these places for seven integers are together. THey are at one place
+This array will have fixed size, once it is created of some size then that size cannot be increased or decreased. So the size of an array is static.
+Where this array can be created? An array can be created either inside stack or it can be created inside heap.
+We can have a pointer, pointing to this array. So array can be created either inside stack or inside heap, any where it can be created.
+When to use this data structure? 
+When you are sure what is the maximum number of elements that you are going to store, if you know the length of the list then you can go for array.
+
+Linked list, this is a complete dynamic data structure, and it is a collection of nodes, where each node contains data and is linked to the next node. 
+The length of this list can grow and reduce, dynamically. So it is having variable length. You can go on adding more and more nodes and add more elements, or you can reduce the size. 
+This linked list is always created in a heap. Collection of nodes are created always in a heap, like heap may be a pointer, that is pointing there. So the head pointer may be insde the stack.
+
+THese two are physical because they define how the memory should be organized for storing the elements or for storing the data. So these are more related to memory. 
+
+[Logical data structure]
+That are stack, queues, trees, graph, hash table.
+Physical data structures are actually meant for storing the data, they will hold the data, they will actually store the data in the memory. Then when you have the list of values you may be performing operations like, inserting more values, or deleting existing values, or searching for the value and many more operations. 
+How you want to utilize those value? How you will be performing insertion and deletion? What is the discipline that you are going to follow? THat discipline is defined by these data structures.
+Stack and Queues are linear data structures. Trees and Graph are non-linear and Hash Table may be linear or tabular data structure.
+Stack is Last in First out
+Queues is First in First out 
+Trees will be organized like a hierarchy
+
+These logical data structure are implemented using any of these physical data structures, either array or linked list, or combination of array and linked list
