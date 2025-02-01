@@ -1,0 +1,17 @@
+void func(int n)
+{
+    if (n > 0)
+    {
+        printf("%d", n);
+        func(n-1);  // recursive call and that call is last statement in a function
+    }
+}
+
+func(3);
+
+Tail recursion of a recursive function is calling itself and that recursive call, 
+Tail recursion after that call, there is nothing it is not performing anything
+
+return func(n-1) + n; // this will be performed at return time because unless the result of this function is known, addition cannot be done. The value of the functon is added with n. So this operation can be performed only at returning time. So in this function, there is something remaining that has to be performed at returning time. So it cannot be a Tail recursion.
+
+Tail recursion means at returning time. It doesn't have to perform anything at all.   
