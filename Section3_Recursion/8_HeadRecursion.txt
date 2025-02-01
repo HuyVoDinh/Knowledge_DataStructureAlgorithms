@@ -1,0 +1,16 @@
+void func1(int n)
+{
+    if (n > 0)
+    {
+        func(n-1);
+        .............
+        .............
+    }
+}
+
+The first statement inside the function is recursive call, it is calling itself.
+All the processing it has to do, it is doing it afterwards after the recursive call. 
+So there is no statement, no operation before the function call. 
+If something is there before the function, call just it is a recursion. So there is nothing before that one.
+-> Head recursion -> the function doesn't have to process or perform any operation at the time of calling. It has to do everything only at the time of returning. 
+So all the processing is done at returning time. 
