@@ -1,0 +1,10 @@
+Scalar means just having just mangnitude. 
+Example:
+Declare a variable of type integer X = 10; -> X will get some memory (address). This type of variable is a single valued variable, which can store just one single value. -> This is scalar value.
+
+Array:
+We can store multiple values that is list of values.
+Array is a collection of elements and all the element are of same type. 
+Array is a collection of similar data elements grouped under one name, suppose to store just one value. 
+Memory allocated will be contiguously. 
+Can diferentiate them ưith their indices. 
