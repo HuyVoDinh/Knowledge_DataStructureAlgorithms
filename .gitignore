@@ -3,3 +3,4 @@ Section19_HashingTechnique/*.exe
 .vscode/c_cpp_properties.json
 .vscode/tasks.json
 .vscode/launch.json
+Section5_ArrayADT/*.exe
