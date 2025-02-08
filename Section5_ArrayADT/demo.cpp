@@ -15,6 +15,28 @@ void Display(struct Array arr)
         printf("%d ", arr.A[i]);
 }
 
+void Append(struct Array *arr, int x)
+{
+    // insert end
+    if(arr->length < arr->size)
+    {
+        arr->A[arr->length++] = x;
+    }
+}
+
+void Insert(struct Array *arr,int index,int x)
+{
+    if(index >= 0 && index <= arr->length)
+    {
+        for(int i = arr->length; i>index;i--)
+        {
+            arr->A[i] = arr->A[i-1];
+        }
+        arr->A[index] = x;
+        arr->length++;
+    }
+}
+
 int main()
 {
     struct Array arr = {{2,3,4,5,6},20,5};
@@ -33,6 +55,10 @@ int main()
     //     scanf("%d", &arr.A[i]);
     // }
 
+    Display(arr);
+    Append(&arr, 10);
+    Display(arr);
+    Insert(&arr,2,30);
     Display(arr);
 
     return 0; 

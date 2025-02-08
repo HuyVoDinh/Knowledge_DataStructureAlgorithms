@@ -1,0 +1,13 @@
+Display is visiting all the elements of an array one by one.
+
+
+
+Add/Append is adding a new element at the end of the array that is at the next free space in an array. Add new element into array, need to increase the length of array
+The time taken by this operation O(1)
+
+Insert: Inserting an element at a given index by shifting the other elements and providing a free space for the new element. 
+The index should not be beyond the length of an array
+The time taken depends where want to insert the element.
+Min: O(1), Max: O(n)
+
+Code in demo - Append/Append
