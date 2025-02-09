@@ -1,0 +1,5 @@
+Delete is removing an element from a given index. 
+Every location need to check whether the element is there or not there.  So instead of keeping that space blank, shift all the elements.
+So whenever delete an element from an array, have to shift the element to occupy that blank space.
+The time taken depends what index given. 
+Min: O(1) Max O(n)
