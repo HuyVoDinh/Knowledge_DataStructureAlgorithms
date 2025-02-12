@@ -156,6 +156,23 @@ float Avg(struct Array arr)
     return (float)Sum(arr)/arr.length;
 }
 
+void Reverse(struct Array *arr){
+    int *B;
+    B = new int (arr->length*sizeof(int));
+    for(int i = arr->length-1, j = 0; i >= 0; i--,j++)
+        B[j] = arr->A[i];
+    for(int i = 0; i < arr->length; i++)
+        arr->A[i] = B[i];
+}
+
+void Reverse2(struct Array *arr)
+{
+    for(int i = 0, j =arr->length-1;i<j;i++,j--)
+    {
+        swap(&arr->A[i], &arr->A[j]);
+    }
+}
+
 int main()
 {
     struct Array arr = {{2,3,4,5,6},20,5};
@@ -191,6 +208,14 @@ int main()
     printf("Min: %d\n", Min(arr));
     printf("Sum: %d\n", Sum(arr));
     printf("Avg: %f\n", Avg(arr));
+    
+    Display(arr);
+    Reverse(&arr);
+    Display(arr);
+
+    Display(arr);
+    Reverse2(&arr);
+    Display(arr);
 
     return 0; 
 }
