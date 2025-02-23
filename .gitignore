@@ -4,3 +4,4 @@ Section19_HashingTechnique/*.exe
 .vscode/tasks.json
 .vscode/launch.json
 Section5_ArrayADT/*.exe
+Section6_SpareseMatricAndPolynomialRepresentation/1_SparseMatrices/*.exe
