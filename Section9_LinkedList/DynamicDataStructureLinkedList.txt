@@ -1,0 +1,13 @@
+Array is of a fixed size. Whenever you are creating an array and later on you cannot increase or decrease the size of an array.
+Why fix size the problem? Unless we are sure that we are going to store some number of elements. If we know the size, the number of elements, then we can create an array of that particular size.
+If we don't know how many elements we are going to store during the runtime of a program, then we cannot decide the size of an array. If we take some random size then that size may be either insufficient or it may be excess
+
+
+Linked list is a collection of nodes where each nodes contain data and pointer to next  node, data and pointed to next node. So link is a collection of nodes where each node contain data and pointed to next node. 
+Head is a pointer pointing to first node or head node.  It has random address. In an array the addresses are contiguous. They are side by side. 
+But all those nodes will not be side by side. Then how the continuity is maintained through links, that is addresses. Link list is created in heap.
+
+Define a node: data and pointer. 
+Data may be any type.
+Pointer is pointing to a node that is next mode.
+
