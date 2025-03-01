@@ -162,15 +162,154 @@ void Insert(Node *p, int index, int x)
     }
     else 
     {
-        for(int  i = 0; i < index; i++)
+        for(int  i = 0; i < index-1; i++)
         {
             p = p->next;
         }
         t->next = p->next;
         p->next = t;
     }
-
 }
+
+void SortedInsert(Node *p, int x)
+{
+    Node *t, *q = NULL;
+    t = new Node();
+    t->data = x;
+    t->next = NULL;
+
+    if(first == NULL)
+        first = t;
+    else
+    {
+        while (p && p->data < x)
+        {
+            q = p;
+            p = p->next;
+        }
+        if(p == first)
+        {
+            t->next = first;
+            first = t;
+        }
+        else 
+        {
+            t->next = q->next;
+            q->next = t;
+        }
+    }
+}
+
+int Delete(Node *p, int index)
+{
+    Node *q = NULL;
+    int x = -1;
+
+    if(index < 1 || index > count(p))
+        return -1;
+    if(index == 1)
+    {
+        q = first;
+        x = first->data;
+        first = first->next;
+        delete q;
+        return x;
+    }
+    else
+    {
+        for(int i = 0; i < index - 1; i++)
+        {
+            q = p;
+            p = p->next;
+        }
+        q->next = p->next;
+        x = p->data;
+        delete p;
+        return x;
+    }
+}
+
+int isSorted(Node *p)
+{
+    int x = -65536;
+    while(p!=nullptr)
+    {
+        if(p->data < x)
+            return 0;
+        x = p->data;
+        p = p->next;
+    }
+    return 1;
+}
+
+void Reverse1(Node *p)
+{
+    int *A, i =0;
+    Node *q = p;
+    int size = count(p);
+    A = new int(size);
+    while (q!=NULL)
+    {
+        A[i] = q->data;
+        q=q->next;
+        i++;
+    }
+    q=p;
+    i--;
+    while(q!=NULL)
+    {
+        q->data=A[i];
+        q=q->next;
+        i--;
+    }
+}
+
+void Reverse2(Node *p)
+{
+    Node *q = NULL, *r = NULL;
+    while (p!=nullptr)
+    {
+        r = q;
+        q = p;
+        p = p->next;
+        q->next = r;
+    }
+    first = q;
+}
+
+void Reverse3(Node *q, Node *p)
+{
+    if(p)
+    {
+        Reverse3(p,p->next);
+        p->next = q;
+    }
+    else
+    {
+        first = q;
+    }
+}
+
+void RemoveDuplicate(Node *p)
+{
+    Node *q = p->next;
+    while(q != NULL)
+    {
+        if(p->data != q->data)
+        {
+            p = q;
+            q = q->next;
+        }
+        else
+        {
+            p->next = q->next;
+            delete q;
+            q = nullptr;
+            q = p->next;
+        }
+    }
+}
+
 
 int main()
 {
@@ -189,7 +328,18 @@ int main()
     else
         printf("Key not found\n");
 
-    Insert(first, 3 , 10);
+    Insert(first, 4, 13);
+    Display(first);
+    printf("\n\n");
+    SortedInsert(first,10);
+    Display(first);
+    printf("\nDeleted element %d\n",Delete(first,4));
+    printf("\nIs sorted: %d\n",isSorted(first));
+    printf("\nRemove duplicated\n");
+    RemoveDuplicate(first);
+    Display(first);
+    printf("\nReverse\n");
+    Reverse3(NULL,first);
     Display(first);
     return 0;
 }
