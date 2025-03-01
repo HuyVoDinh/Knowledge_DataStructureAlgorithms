@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define INT32_MIN (-2147483647 - 1)
 
 struct Node
 {
@@ -79,13 +80,116 @@ int Rsum(Node *p)
         return Rsum(p->next)+p->data;
 }
 
+int Max(Node *p)
+{
+    int max = INT32_MIN;
+
+    while(p)
+    {
+        if(p->data > max)
+            max = p->data;
+        p = p->next;
+    }
+    return max;
+}
+
+int RMax(Node *p)
+{
+    int x = 0;
+    if (p == 0)
+        return INT32_MIN;
+    x = RMax(p->next);
+    if (x > p->data)
+        return x;
+    else 
+        return p->data;
+}
+
+Node *LSearch (Node *p, int key)
+{
+    while(p!=NULL)
+    {
+        if (key == p->data)
+            return p;
+        p = p->next;
+    }
+    return NULL;
+}
+
+Node *RSearch(Node *p, int key)
+{
+    if (p == NULL)
+        return NULL;
+    if(key == p->data)
+        return p;
+    return RSearch(p->next, key);
+}
+
+// Move node to first if found
+Node *LSearch2(Node *p, int key)
+{
+    struct Node*q;
+    while(p != NULL)
+    {
+        q = p;
+        if(key == p->data)
+        {
+            q->next = p->next;
+            p->next = first;
+            first = p;
+            return p;
+        }
+        
+        p = p->next;
+    }
+    
+    return RSearch(p->next, key);
+}
+
+void Insert(Node *p, int index, int x)
+{
+    struct Node *t;
+    if(index < 0 || index > count(p))
+    {
+        return;
+    }
+    t = new Node();
+    t->data = x;
+    if(index == 0)
+    {
+        t->next = first;
+        first = t;
+    }
+    else 
+    {
+        for(int  i = 0; i < index; i++)
+        {
+            p = p->next;
+        }
+        t->next = p->next;
+        p->next = t;
+    }
+
+}
+
 int main()
 {
     int A[] = {3,5,7,10,15};
+    Node *temp;
 
     create(A,5);
     Display(first);
     printf(" \nLength is: %d\n", Rcount(first));
     printf(" \nSum is: %d\n", sum(first));
+    printf("\nMax is %d\n", RMax(first));
+
+    temp = RSearch(first, 10);
+    if(temp)
+        printf("Key is found %d\n", temp->data);
+    else
+        printf("Key not found\n");
+
+    Insert(first, 3 , 10);
+    Display(first);
     return 0;
 }
