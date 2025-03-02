@@ -5,7 +5,7 @@ struct Node
 {
     int data;
     struct Node *next;
-} *first = NULL;   // this become a global pointer
+} *first = NULL, *second = NULL, * third = NULL;   // this become a global pointer
 
 void create(int a[], int n)
 {
@@ -310,10 +310,75 @@ void RemoveDuplicate(Node *p)
     }
 }
 
+// Example merge, concat
+void create2(int a[], int n)
+{
+    struct Node *t, *last;
+    second = new Node();
+    second->data=a[0];
+    second->next = NULL;
+    last = second;
+    for(int i = 1; i < n;i++)
+    {
+        t = new Node();
+        t->data = a[i];
+        t->next = NULL;
+        last->next = t;
+        last =t;
+    }
+}
+
+void Concat(Node *p, Node *q)
+{
+    third = p;
+    while(p->next!=NULL)
+    {
+        p = p->next;
+    }
+    p->next = q;
+}
+//Only apply to sorted linked list
+void Merge(Node *p, Node *q)
+{
+    Node *last;
+    if(p->data < q->data)
+    {
+        third = last = p;
+        p = p->next;
+        third->next = NULL;
+    }
+    else
+    {
+        third = last = q;
+        q = q->next;
+        third->next = NULL;
+    }
+
+    while(p && q)
+    {
+        if(p->data < q->data)
+        {
+            last->next = p;
+            last = p;
+            p = p->next;
+            last->next = NULL;
+        }
+        else
+        {
+            last->next = q;
+            last = q;
+            q = q->next;
+            last->next = NULL;
+        }
+    }
+    if(p)last->next = p;
+    if(q) last->next = q;
+}
 
 int main()
 {
-    int A[] = {3,5,7,10,15};
+    int A[] = {6,7,8,10,15};
+    int B[] = {1,2,3,4,20};
     Node *temp;
 
     create(A,5);
@@ -341,5 +406,28 @@ int main()
     printf("\nReverse\n");
     Reverse3(NULL,first);
     Display(first);
+    Reverse3(NULL,first);
+
+    //Concat & merge
+    create2(B,5);
+    // printf("\nConcat\n");
+    // printf("\nFirst: ");
+    // Display(first);
+    // printf("\nSecond: ");
+    // Display(second);
+    // Concat(first,second);
+    // printf("\nThird: ");
+    // Display(third);
+
+    
+    printf("Merge\n");
+    printf("\nFirst: ");
+    Display(first);
+    printf("\nSecond: ");
+    Display(second);
+    Merge(first,second);
+    printf("\nThird: ");
+    Display(third);
+
     return 0;
 }
