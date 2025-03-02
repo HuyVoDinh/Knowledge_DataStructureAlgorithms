@@ -375,6 +375,26 @@ void Merge(Node *p, Node *q)
     if(q) last->next = q;
 }
 
+//Loop linked list: Last node of a linked list is pointing on some node in the linked list. It's not hte first node, it's some other node. 
+// If a last node is pointing on some node of a linked list, then it is forming a loop. 
+int isLoop(Node *f)
+{
+    Node *p, *q;
+    p = q = f;
+
+    do
+    {
+        p = p->next;
+        q = q->next;
+        q = q ? q->next : q;
+    } while (q && p && q!=p);
+    if (p == q)
+        return 1;
+    else 
+        return 0;
+    
+}
+
 int main()
 {
     int A[] = {6,7,8,10,15};
@@ -429,5 +449,10 @@ int main()
     printf("\nThird: ");
     Display(third);
 
+    Node *t1, *t2;
+    t1 = first->next->next;//pointing on 2th node
+    t2 = first->next->next->next->next; // pointing on 4th node
+    t2-> next = t1;
+    printf("\nis Loop: %d", isLoop(first));
     return 0;
 }
