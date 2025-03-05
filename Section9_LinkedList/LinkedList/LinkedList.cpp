@@ -395,6 +395,17 @@ int isLoop(Node *f)
     
 }
 
+
+//Linear means last node was having null. .
+//Circular linked list is a linked list in which the last node will point on first node.
+// We usually use a term head, that is a pointer name, head for one of the node. So there is no first node or last node, they're circular. 
+// Benefit: We can traverse these nodes circularly. Suppose you have started from head, you can go to next node,  the the next node. If u go next, again, you'll be back on head node. 
+// So u can traverse this linked list circularly. In our computer system or in our mobile apps, at many places we find that things or list or collection is handed circularly. 
+// If u take the example of a contact list in your mobile phone, suppose you are scrolling up the contacts and you have reached the last contact that is starting with the Z. 
+// Then again, in some mobile phones or in some apps, if you scroll up again the contact with A will start again. So it means we are able to access the list of contacts, list of contacts circularly.
+// Though in that app, you can move up and down. Bidirectional movement is there. 
+// Circular only loop linked list
+
 int main()
 {
     int A[] = {6,7,8,10,15};
