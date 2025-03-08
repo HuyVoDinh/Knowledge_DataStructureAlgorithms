@@ -40,6 +40,7 @@ void Display (Node *p)
         printf("%d ", p->data);
         p = p->next;
     }
+    
     printf("\n");
     
 }
@@ -114,6 +115,29 @@ int Delete(Node *p, int index)
     return x;
 }
 
+void Reverse(Node *p)
+{
+    Node *temp;
+
+    while (p != NULL)
+    {
+    
+        temp = p->next;
+        p->next = p->prev;
+        p->prev = temp;
+        p = p->prev;
+        if(p->next == NULL)
+        {
+            p->next = p->prev;
+            p->prev = nullptr;
+            first = p;
+            break;
+        }
+        printf("%d ", p->data);
+    }
+    
+}
+
 int main()
 {
     int A[] = {10,20,30,40,50};
@@ -129,6 +153,8 @@ int main()
     Delete(first,6);
     Display(first);
 
-
+    printf("\nReverse \n");
+    Reverse(first);
+    Display(first);
     return 0;
 }
