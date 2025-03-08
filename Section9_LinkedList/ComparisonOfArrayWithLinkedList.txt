@@ -1,0 +1,49 @@
+Array:
+- can be created inside stack, as well as it can be created in heap.
+- Size is fixed. 
+Linked list:
+- Always created in heap. There is no meaning of creating it inside stack. 
+- variable size. can grown as much as you want. When heap is full, then you cannot grow further.
+
+Advantage and disadvantage
+Array:
+- Fixed size sp chances of getting perfectly utilized is less. Either, it may be having some spaces left over or it may not be sufficient for storing all the elements. 
+So this should be used when you are sure that you will not get the number of elements more than this size. It may be wasting spaces if you are not storing it fully. 
+Linked list:
+- when dont know what is length, can go on creating nodes and go on adding it. And also can go on reducing it. 
+
+Space consumer:
+Array:
+- occupy space only equal to the size of the data. 
+Linked list: space for pointing to the next node. Space for an integer pointed to next node. So inside every node for every data, there is a extra space required for storing the link of next one.
+
+
+Accessibility:
+Array: can be accessed randomly. 
+Linked list: accessed sequentially. 
+
+Faster access:
+Array: inside the stack, it is faster. Inside heap: two-step access, indirect access. 
+Linked list: indirect access. 
+
+Insert and delete operation:
+Array list - first: O(n)
+            - last: O(1)
+Linked list - first: O(1)
+            - last: O(n)
+
+Search:
+Array:
+    Linear O(n)
+    Binary O(log n)
+Linked list:
+    Linear O(n)
+    Binary O(nlogn): Going to middle means should scan through all the nodes and go in the middle. So this movement needs n time. to reach middle, have to start from first. it's N, so it'll not be logN, it'll be NlogN
+
+Sort:
+Array:
+    Insertion Sort
+    Merge sort
+Linked list:
+    Insertion Sort
+    Merge Sort
