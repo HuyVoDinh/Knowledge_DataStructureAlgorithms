@@ -55,6 +55,65 @@ int Length(Node *p)
     return length;
 }
 
+void Insert(Node *p, int index, int x)
+{
+    Node *t;
+    if(index < 0 || index > Length(p))
+        return;
+    
+    if(index == 0)
+    {
+        t = new Node();
+        t->data = x;
+        t->prev = NULL;
+        t->next = first;
+        first->prev = t;
+        first = t;
+    }
+    else
+    {
+        for(int i = 0; i < index-1; i++)
+        {
+            p = p->next;
+        }
+        t = new Node();
+        t->data = x;
+        t->prev = p;
+        t->next = p->next;
+        if(p->next)
+            p->next->prev = t;
+        p->next = t;
+    }
+}
+
+int Delete(Node *p, int index)
+{
+    Node *q;
+    int x = -1;
+    if(index < 1 || index > Length(p))
+        return -1;
+    if(index == 1)
+    {
+        first = first->next;
+        if(first) first->prev = NULL;
+        x = p->data;
+        delete p;
+    }
+    else
+    {
+        for(int i = 0; i < index-1;i++)
+        {
+            p = p->next;
+        }
+        p->prev->next = p->next;
+        if(p->next)
+            p->next->prev = p->prev;
+        x = p->data;
+        delete p;
+    }
+    return x;
+}
+
 int main()
 {
     int A[] = {10,20,30,40,50};
@@ -62,5 +121,14 @@ int main()
     printf("\nLength is :%d\n", Length(first));
 
     Display(first);
+    printf("\nInsert \n");
+    Insert(first,5,25);
+    Display(first);
+
+    printf("\nDelete \n");
+    Delete(first,6);
+    Display(first);
+
+
     return 0;
 }
