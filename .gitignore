@@ -5,3 +5,6 @@ Section19_HashingTechnique/*.exe
 .vscode/launch.json
 Section5_ArrayADT/*.exe
 Section6_SpareseMatricAndPolynomialRepresentation/1_SparseMatrices/*.exe
+Section9_LinkedList/CircularLinkedList/*.exe
+Section9_LinkedList/DoubleLinkedList/*.exe
+Section9_LinkedList/LinkedList/*.exe
