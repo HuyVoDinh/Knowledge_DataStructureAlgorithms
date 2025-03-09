@@ -1,0 +1,15 @@
+Stack is a data structure which works Last In First Out (LIFO) actually a stock is a collection of elements set of values collection of elements and those collection of elements they are inserted and deleted by following this discipline.
+So if inserting the elements then when want to delete which one can be deleted only the last one that was inserted that can be deleted first. 
+If we are using a stack in some application the in our program also stack would be used to let us see a few examples where stack is used in our daily life.
+
+ADT Stack
+Data:
+    1. Space for storing elements
+    2. Top pointer
+Operations:
+    1. push(x)
+    2. pop()
+    3. peek(index)
+    4. StackTop()
+    5. isEmpty()
+    6. isFull()
