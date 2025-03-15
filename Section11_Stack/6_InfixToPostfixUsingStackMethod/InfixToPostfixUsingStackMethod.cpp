@@ -126,7 +126,7 @@ void Display()
 
 int isOperand(char x)
 {
-    if(x == '+' ||x == '-' || x == '*'  ||x == '\\' )
+    if(x == '+' ||x == '-' || x == '*'  ||x == '/' )
         return 0;
     return 1;
 }
@@ -135,7 +135,7 @@ int pre(char x)
 {
     if(x=='+' || x == '-')
         return 1;
-    else if(x== '*' || x == '\\')
+    else if(x== '*' || x == '/')
         return 2;
     return 0;
 }
