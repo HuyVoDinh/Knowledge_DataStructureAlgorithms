@@ -1,0 +1,28 @@
+[Single Pointer]
+Take an array of a fixed size. Then need one pointer. Taken a pointer that is a rear pointer. Initially there is nothing in the queue so it is pointing on minus one. 
+So now queue is empty because rear is qual to minus one. -1 is not an index in array. and this is starts from 0. So it is standing before that location.
+That is before first location. 
+When try to insert and delete. Just using rear
+If want to insert any element in a queue then the procedure is move rear to next location. Just increment rear to the next location and insert an element, like wist just move rear to next location and insert element. 
+
+Delete:
+From the queue can delete only element that is the very first element because it is FIFO. So only that element can go out. So for deleting that element, just take out that element and assume that it is removed from the queue. 
+After deleting the element, this location is empty. So in array dont leave blank spaces or we will not have any empty spaces. Must move all these elements. So shift all these elements on the left hand side. 
+
+Insert O(1)
+Delete O(n)
+
+[Two pointer]
+Have a fixed size array. And have two pointers, front and rear. Initial front and rear at -1. It means there is nothing in the queue and queue is empty. 
+Insert: 
+For inserting an element should move rear pointer to a next location and insert an element. So it's so simple for inserting an element. Just increment rear pointer.
+Move it to the next location and insert an element. 
+
+Delete:
+Just move front and take out the element. 
+
+Both enqueue and dequeue operation, that is insert and delete operation, are taking constant time. 
+
+Empty: Front is equals to rear is the condition for queue empty. 
+
+Full: Rear = size -1
