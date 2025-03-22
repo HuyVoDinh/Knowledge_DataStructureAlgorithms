@@ -1,0 +1,13 @@
+Tree is a collection of nodes or vertices and edges. If there are n nodes, then there will be n-1 edges. 
+Root is not having a edge coming from any parent because that is the parent of all the nodes. 
+The very first node on the top is a root. 
+Parent and child: A node is a parent to its very next descendants or those children which are connected with just one edge. 
+Sibling: are children of same parent. 
+Descendants: for any node, the set of nodes which are its children and their children,...
+Ancestor: All the nodes along the path from that node to root node. 
+Degree of a node: is number of children it is having. Direct children, not all descendants. 
+Internal and external: also called as non-leaf nodes and leaf nodes or terminal nodes or non terminal nodes. Nodes with a degree zero are called as leaf nodes Those nodes whose degree is greater than zero are internal nodes, non-leaf nodes, non terminal nodes.
+Level: For level we count nodes
+Heigh: 
+
+Binary tree: Degree two means every node can have maximum two children. It can have less then two children. If the degree is a two then it is called as binary tree.
