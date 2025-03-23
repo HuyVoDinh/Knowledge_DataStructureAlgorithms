@@ -11,4 +11,5 @@ If nodes are given:
 Min height: h = log2(n+1)-1
 Max height: h = (n-1)/2
 
-edge = i +1
+i (internal node) e(external node)
+e = i +1
