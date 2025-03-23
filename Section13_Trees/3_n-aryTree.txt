@@ -1,0 +1,16 @@
+m-ary is a degree of a tree can have at most, n children, not more than n children. 
+
+Ex:
+3-ary Tree {0,1,2,3}
+So every node can have 0 1 2 3 children, any of these. So the capacity of each node is maximum three. It can be from zero to 3 but not more than 3
+
+If height is given:
+Min nodes n = m*h+1
+Max nodes n = (m^(h+1)-1)/m-1
+
+If Nodes are given
+Min height h = logm(n(m-1)+1)-1
+Max height h = n-1/m
+
+i (internal node) e(external node)
+e = (m-1)i+1
