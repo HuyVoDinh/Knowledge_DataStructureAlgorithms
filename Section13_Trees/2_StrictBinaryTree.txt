@@ -1,0 +1,14 @@
+Strict/Proper/Complete binary tree.
+
+In a strict binary tree, a node can have  either zero children or exactly two children. A node cannot have one child.
+So strict means it must be strictly binary. There should not be any node with a degree one that is unary. 
+
+If height is given:
+Min nodes n = 2h+1
+Max nodes n = 2^(h+1) - 1
+
+If nodes are given:
+Min height: h = log2(n+1)-1
+Max height: h = (n-1)/2
+
+edge = i +1
