@@ -1,0 +1,7 @@
+- Full binary tree: A binary tree of height h having maximum number of nodes is a full binary tree. 
+- Complete binary tree: From first element to last element, there are no any blank spaces in between, this is complete binary tree. If a binary tree is represented in an array, 
+then there should not be any blank spaces in between the elements. If there are blank spaces, it's not a complete binary tree. The elements will be filled from left to right without skipping any elements. 
+Have filled them from left to right without skipping. If missing, it's not a complete binary tree.
+
+Why need complete binary tree?
+If a tree is such that you are forced to have blank spaces, then it is not suitable for array. 
