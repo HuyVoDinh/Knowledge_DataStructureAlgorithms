@@ -1,0 +1,7 @@
+The definition is every node can have either degree 0 or 2. means no children or two children.
+Complete binary means when it is represented in an array, there should not be any blank spaces in between the elements. 
+May find complete binary tree defination as a strict binary tree. It means strict binary tree is also called as complete. 
+Complete sometime called as almost complete. 
+
+Strict can complete or not complete.
+Complete can strict or not strict
