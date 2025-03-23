@@ -1,0 +1,10 @@
+Traversing means visiting all the elements or visiting all the nodes. 
+If a data structure is linear, can traverse in 2 methods.
+    + First to last, that is forward, 
+    + Last to first, backward.
+
+In nonlinear:
+    + Preorder: visit(node), Preorder(left subtree), Preorder(right subtree): Means visiting a node first, visiting any node, then performing preorder on its left subtree and performing preorder on its right subtree. 
+    + Inorder: Inorder (left), visit (node), Inorder (right): perform inorder traversal on left subtree, then visit a node, then perform inorder traversal on right subtree.
+    + Postorder: Postorder (left), Postorder (right), visit (node): Perform postorder on left subtree, right subtree, then visit a node.
+    + Levelorder: Level by level: Visit all the nodes level by level.
