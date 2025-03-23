@@ -11,3 +11,31 @@ Level: For level we count nodes
 Heigh: 
 
 Binary tree: Degree two means every node can have maximum two children. It can have less then two children. If the degree is a two then it is called as binary tree.
+
+[Number of binary trees using N Nodes]
+Two type of nodes:
++ Unlabelled nodes: These are empty nodes. Labeling is not there. If a three nodes are given how many different binary trees can be generated? -> 2nCn / n+1. Ex 3 nodes can draw 5, 4 nodes can draw 14
+Other formular: T(n) = Sum(n,i=1) = T(i-1)*T(n-i)
++ Labelled nodes: There are name for nodes. Label means if pick up just one tree, then how many ways can label it? Ex: ABC, ACB, BCA,BAC, CAB, CBA.
+T(n) = (2nCn/n+1) * n!
+            |       |
+          shapes  filling
+
+
+
+[Height vs Nodes in Binary Tree]
+<HeightvsNodesInBinaryTree.png>
+minNodes n = h+1
+maxNodes:
+Geometric progression seriesa + ar + ar^2 + ar^3+ ... + ... ar^k
+= a*(r^k(+1) - 1)/ r-1
+-> a = 1 -> 1*(2^(h+1)-1)/2-1 = 2^(h+1)-1
+
+If height is given 
+Min Node: n = h + 1
+Max Nodes n =  2^(h+1)-1
+If nodes are given
+Min height h = n - 1
+Max height h = log2(n+1)-1
+
+deg(0) = deg(2) +1
