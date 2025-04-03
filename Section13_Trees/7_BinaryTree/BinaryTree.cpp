@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include "Queue.h"
+#include "Stack.h"
 
 struct Node *root = NULL;
 
-void create()
+void TreeCreate()
 {
     Node *p,*t;
     int x;
     Queue q;
     create(&q,100);
 
-    printf("Enter root value");
+    printf("Enter root value ");
     scanf("%d", &x);
     root = new Node();
     root->data = x;
@@ -54,9 +55,75 @@ void preorder(Node *p)
     }
 }
 
-int main()
+void Inorder(Node *p)
 {
-    create();
-    preorder(root);
+    if(p)
+    {
+        Inorder(p->lchild);
+        printf("%d ", p->data);
+        Inorder(p->rchild);
+    }
+}
+
+// Iterative Tree Traversals
+void Postorder(Node *p)
+{
+    if(p)
+    {
+        Inorder(p->lchild);
+        Inorder(p->rchild);
+        printf("%d ", p->data);
+    }
+}
+
+void IPreorder(Node *p)
+{
+    Stack stk;
+    StackCreate(&stk,100);
+
+    while(p || !isEmptyStack(stk))
+    {
+        
+        if(p)
+        {
+            printf("%d", p->data);
+            push(&stk,p);
+            p=p->lchild;
+        }
+        else
+        {
+            p=pop(&stk);
+            p=p->rchild;
+        }
+    }
+}
+
+void IInorder(Node *p)
+{
+    Stack stk;
+    StackCreate(&stk,100);
+
+    while(p || !isEmptyStack(stk))
+    {
+        
+        if(p)
+        {
+            push(&stk,p);
+            p=p->lchild;
+        }
+        else
+        {
+            p=pop(&stk);
+            printf("%d ", p->data);
+            p=p->rchild;
+        }
+    }
+}
+
+int main() 
+{
+    TreeCreate();
+    printf("\nPre order ");
+    IInorder(root);
     return 0;
 }

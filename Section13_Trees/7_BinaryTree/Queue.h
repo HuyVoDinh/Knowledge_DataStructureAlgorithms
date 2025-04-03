@@ -1,5 +1,5 @@
 #ifndef Queue_h
-#define Quque_h
+#define Queue_h
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,7 +23,7 @@ void create(Queue *q, int size)
 {
     q->size = size;
     q->front = q->rear = 0;
-    *q->Q = new Node();
+    q->Q = new Node*[size];
 }
 
 void enqueue(Queue *q, Node *x)
