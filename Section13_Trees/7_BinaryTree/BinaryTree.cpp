@@ -142,6 +142,38 @@ void LevelOrder(Node *p)
     }
 }
 
+// Generate tree from traversals
+/***
+ * Example:
+ * n = 3. A B C
+ * preorder - A B C
+ * From preorder, if try to generate a tree, 5 trees are possible for 3 elements. Actually, we want 1 unique tree, so cant generate a tree. We cant find out because there are multiple trees are possible, which are giving same preorder for 3 elements. 
+ * So conclusion is if only preorder is given
+ * Preorder = 2nCn/n+1
+ * Postorder - C B A
+ * 
+ * So if give preorder and postorder also, more than one trees can have same preorder and postorder. We just need 1 single tree.
+ * Solution:
+ * Preorder + Inorder
+ * Inorder + Preorder
+ * Why InOrder? -> Because Inorder will take the root in the middle. So first it gives left then root, then right.
+ * Inorder can help if know the root then what should go on left size, what should go on right side.  It can help decide the splitting of nodes in the left subtree or right subtree. That why inorder is mandatory.  
+ * 
+ * 
+ * Preorder - 4, 7, 9, 6, 3, 2, 5, 8, 1
+ * Inorder - 7, 6, 9, 3, 4, 5, 8, 2, 1
+ * 1. Create a Node
+ * 2. Take all the elements of in order, take an order as it is in the node. Dont change the order. Write the elements in the same order. : 7, 6, 9, 3, 4, 5, 8, 2, 1   (1)
+ * 3, Repeating procedure, scan through pre-order by taking one element at a time. Then what to do with each element? 
+ * 3.1 Take the first element from left to right. First in the element is root -> 4 is root. Search 4 in (1) -> Found, take 4 in one node, this is root. 
+ * 3.2 7, 6, 9, 3 on the left-hand size. 5, 8, 2, 1 on the right-hand size.
+ * .............
+ * 
+ * Time: O(n^2)
+ * ***/
+
+
+
 int main() 
 {
     TreeCreate();
