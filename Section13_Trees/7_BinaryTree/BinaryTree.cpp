@@ -173,11 +173,33 @@ void LevelOrder(Node *p)
  * ***/
 
 
+// Height and Count of Binary Tree
+int count (Node *root)
+{
+    if (root)
+        return count(root->lchild)+count(root->rchild)+1;
+    return 0;
+}
+
+int height(Node *root)
+{
+    int x=0, y=0;
+    if(root == 0)
+        return 0;
+    x = height(root->lchild);
+    y = height(root->rchild);
+    if(x>y)
+        return x+1;
+    else
+        return y+1;
+}
+
 
 int main() 
 {
     TreeCreate();
-    printf("\nLevel order ");
-    LevelOrder(root);
+    printf("\nCount %d ", count(root));
+    printf("\nHeight %d", height(root));
+
     return 0;
 }
