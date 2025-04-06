@@ -1,0 +1,5 @@
+Every node, all the elements in its left subtree are smaller than parent node. And all the elements in the right subtree are greater than parent node.
+Properties:
++ Binary search tree will not have duplicates. 
++ If take the in order reversal of binary search tree, get the list of elements in sorted order.
++ Number of binary search trees for N nodes, if N nodes are given. : 2nCn / n+1
