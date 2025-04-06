@@ -120,10 +120,32 @@ void IInorder(Node *p)
     }
 }
 
+void LevelOrder(Node *p)
+{
+    Queue q;
+    create(&q, 100);
+    printf("%d ", p->data);
+    enqueue(&q,root);
+    while(!isEmpty(q))
+    {
+        root = dequeue(&q);
+        if(root->lchild)
+        {
+            printf("%d ", root->lchild->data);
+            enqueue(&q, root->lchild);
+        }
+        if(root->rchild)
+        {
+            printf("%d ", root->rchild->data);
+            enqueue(&q, root->rchild);
+        }
+    }
+}
+
 int main() 
 {
     TreeCreate();
-    printf("\nPre order ");
-    IInorder(root);
+    printf("\nLevel order ");
+    LevelOrder(root);
     return 0;
 }
