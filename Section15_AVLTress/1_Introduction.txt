@@ -1,0 +1,27 @@
+How the height of a tree is balanced?
+It is balanced using balance factor. 
+Balance factor = height of left subtree - height of right subtree.
+Balance factor which calculate on every node of a binary search tree, call it as AVL tree. 
+On every node we calculate this and the balance factor of every node must be either {-1,0,1}. It should be any one of these. These are valid balance factors. 
+bf = |hl - hr| <= 1 -> balance
+if bf = |hl - hr > 1 -> imbalance
+
+In AVL tree, every node should be balanced. If any one node is imbalance, then say tree is imbalance. 
+
+[Inserting in AVL with Rotation]
+1. LL - Rotation
+2. RR - Rotation
+3. LR - Rotation
+4. RL - Rotation
+
+<LL - Rotation.png>
+<RR-Rotation.png>
+<LR-Rotation.png>
+<RL-Rotation.png>
+
+LL or RR called as single rotations. 
+LR or RL are called as double rotations.
+But dont count this as two rotations, count as one only.
+LR and RL having 2 steps, so it is double, capacity is double, size is double, number of steps are double. 
+
+Observation - using three keys or three nodes -> How many different binary search keys can form? -> 5
