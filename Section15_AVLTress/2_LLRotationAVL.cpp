@@ -127,6 +127,10 @@ Node *RInsert(Node *p, int key)
     return p;
 }
 
+
+//Rotation for Deletion
+
+
 int main()
 {
     root = RInsert(root,50);
