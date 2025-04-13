@@ -1,0 +1,40 @@
+/***
+ * 2-3 tree are search trees like binary search trees.
+ * Binary search tree can contain 1 key and 2 children. 
+ * <2-3 trees>
+ * There are many types:
+ *  + m-way
+ *  + multiway search tree
+ *  + Degree 3
+ *  + B-Tree
+ * 
+ * Rule: 
+ *  + All leaf nodes at same level
+ *  + Every node must have at least half of the children n/2 = 3/2 = 2
+ *  + It cannot have duplicates
+ <Insert23Trees.png>
+
+
+ ==
+ Deletion
+ <Deletion1>
+ <Case1-Delete90>: Simply Delete
+ Have searched for a key and key was in the leaf, it is simply deleted and there is no effect upon the 2-3 tree or a tree after deletion.
+ <Case2-Delete80> <Case3-Deletion60-1> <Case3-Deletion60-2> or <Case3-Deletion60-3>: Delete and Merge
+ 80 is gone, this node has became vacant, we should not have empty node. Then merge this with sibling, either the left sibling or right sibling.
+ Bring the key from the parent and join these two nodes. Node: Merge with right sibling is better. But if dont have right sibling then have to go with the left sibling.
+
+ <Case4-Deletion60>  <Case4-Deletion60-2>: Borrow
+ Left having only one key, it cannot share it. in the right, it is having 2 keys, can share one key. 
+
+ This should be the first step, borrowing should be the first step. If borrowing is not possible, then can merge. 
+
+ <Case5-Deletion>  <Case5-Deletion2345>
+
+ Case6-Deletion50>
+  Case7-Deletion40>
+
+
+  ==========================
+  Min - max nodes
+ * ***/
