@@ -1,0 +1,8 @@
+B-Tree of degree = 4. B-tree is a multi-way search tree and it is a height balanced multi-way search tree. 
+So how it will balance the height?:
+    + All leaf at same level. 
+    + Every node must have 4/2 degree by 2 number of children.
+
+2-3-4 Trees -> That's why it is called as 2,3,4. Every node can have either 1,2,3 keys. 
+
+Delete: If can't borrrow from sbiling. We need to merge
